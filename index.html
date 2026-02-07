@@ -55,8 +55,8 @@
     }
 
     .logo {
-      max-width: 50%;
-      max-height: 50%;
+      width: clamp(160px, 40vw, 320px);
+      height: auto;
       object-fit: contain;
       animation: logoPop 2.5s infinite;
     }
@@ -78,7 +78,9 @@
     }
 
     @keyframes logoPop {
-      0% { transform: scale(1); } 
+      0% { transform: scale(1); }
+      50% { transform: scale(1.12); }
+      100% { transform: scale(1); }
     }
 
     /* floating particles */
@@ -97,19 +99,23 @@
     }
 
     @media (max-width: 480px) {
-      .card {
-        width: 180px;
-        height: 180px;
-      }
-
-      .front {
-        font-size: 1.8rem;
+      .logo {
+        width: 70vw;
       }
 
       .back {
         font-size: 1rem;
       }
     }
+
+    .front {
+      font-size: 1.8rem;
+    }
+
+    .back {
+      font-size: 1rem;
+    }
+    
     footer {
       position: absolute;
       bottom: 20px;
